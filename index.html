@@ -121,6 +121,10 @@
         .links_social a img {
 	width: 51px;
 }
+        #show_more {
+	position: absolute;
+	left: 48%;
+}
         </style>
 	<link rel="stylesheet" href="css/jquery.fullPage.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -139,11 +143,17 @@
             $('#fullpage').fullpage({
 				verticalCentered:true,
 				sectionsColor:['#000','#1bbc9b', '#4BBFC3', '#7BAABE'],
+				navigation: true,
+				navigationPosition: 'right',
 				afterRender: function(){
 					//playing the video
 					$('video').get(0).play();
 				}
 			});
+			$('#fp-nav').css('margin-top','0px');
+			$('#fp-nav').css('width','19px');
+			$('#fp-nav').css('height','19px');
+			$('#show_more').css('z-index','20');
 			
         });
     </script>
@@ -180,14 +190,15 @@
                         
                         </div>
                     </div>
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show_more" onClick="$.fn.fullpage.moveSectionDown();">
+                      <i class="material-icons">expand_more</i>
+                    </button>
+                    <div class="mdl-tooltip--top mdl-tooltip" for="show_more">
+                        Scroll to see more
+                    </div>
 				</div>
                 <!-- Colored FAB button with ripple -->
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show_more">
-                  <i class="material-icons">expand_more</i>
-                </button>
-                <div class="mdl-tooltip--top mdl-tooltip" for="show_more">
-                	Scroll to see more
-                </div>
+                
 
             </div>
             <div class="section" id="section2">
