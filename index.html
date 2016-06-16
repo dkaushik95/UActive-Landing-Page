@@ -16,10 +16,16 @@
 		<![endif]-->    
         
         <!--- ALL CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
         <style>
-				h1{
+			body {
+			  font-family: "Brandon Grotesque Black", "Brandon Grotesque Black Italic", "Brandon Grotesque Bold", "Brandon Grotesque Bold Italic", "Brandon Grotesque Light", "Brandon Grotesque Light Italic", "Brandon Grotesque Medium", "Brandon Grotesque Medium Italic", "Brandon Grotesque Regular", "Brandon Grotesque Regular Italic", "Brandon Grotesque Thin", "Brandon Grotesque Thin Italic";
+			}
+			h1{
 				font-size: 5em;
-				font-family: arial,helvetica;
+				font:"Brandon Grotesque Bold";
 				color: #fff;
 				margin:0;
 				padding:0;
@@ -57,12 +63,16 @@
 			}
 			.left{
 				float: left;
-				width:50%;
-				height:100%;
-				z-index:5;
+				width: 50%;
+				height: 100%;
+				z-index: 5;
+				position: fixed;
+				top: -4px;
+				left: -6px;
 			}
 			.left img{
-				margin-top:40px;
+	margin-top: 97px;
+	width: 293px;
 			}
 			
 			.right{
@@ -71,11 +81,12 @@
 				height:100%;
 			}
 			#logo{
-				margin-top:100px;
-				
+	margin-top: 100px;
+	width: 312px;
 			}
 			.right p{
 				font-size:25px;
+				font:"Brandon Grotesque";
 			}
 			
 			
@@ -92,6 +103,24 @@
         .links_app #google_logo img {
 			width: 159px;
 		}
+		#header{
+			position: absolute;
+			width: 100%;
+			z-index: 4;
+			top: 0px;
+			left: 0px;
+		}
+		#section1 button{
+			z-index:4;
+			position:fixed;
+			bottom:4px;
+		}
+        .links_app #apple_logo img {
+	width: 173px;
+}
+        .links_social a img {
+	width: 51px;
+}
         </style>
 	<link rel="stylesheet" href="css/jquery.fullPage.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -102,6 +131,11 @@
     <script src="js/jquery.fullPage.js"></script>
     <script>
 		$(document).ready(function(e) {
+			$("#show_more").click(function() {
+				$('html,body').animate({
+					scrollTop: $(".section").offset().top},
+					'slow');
+			});
             $('#fullpage').fullpage({
 				verticalCentered:true,
 				sectionsColor:['#000','#1bbc9b', '#4BBFC3', '#7BAABE'],
@@ -110,6 +144,7 @@
 					$('video').get(0).play();
 				}
 			});
+			
         });
     </script>
     
@@ -117,31 +152,43 @@
   <body>
   		<div id="fullpage">
         	<div class="section" id="section1">
+            	<img src="images/header.png" alt="" id="header" >
             	<video autoplay loop muted id="myVideo">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.mp4" type="video/mp4">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.webm" type="video/webm">
 				</video>
 				<div class="layer">
 					<div class="left">
-                    	<img src="http://mockuphone.com/static/images/phones/iphone6plus/iphone6plus_spacegrey_portrait.png" alt="">
+                    	<img src="images/iphone.png" alt="">
                     </div>
                     <div class="right">
-                    	<img id="logo" src="http://uactiv.co/wp-content/themes/launch/assets/images/uactiv-logo.png" alt="">
+                    	<img id="logo" src="images/logo.png" alt="">
                         <h1>Sample Text <br> Comes here</h1>
                         <p>Your go to social network for Sports <br>and Fitness</p>
                         <div class="links_app">
                         	<a href="" id="google_logo">
-                            <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+                            <img alt="Get it on Google Play" src="images/google_badge.png" />
                             </a>
                             <a href="" id="apple_logo">
-                            <img src="images/apple.svg" alt="">
+                            <img src="images/apple_badge.png" alt="">
                             </a>
                         </div>
                         <div class="links_social">
+                        	<a href=""><img src="images/facebook.png" alt=""></a>
+                            <a href=""><img src="images/instagram.png" alt=""></a>
+                            <a href=""><img src="images/twitter.png" alt=""></a>
                         
                         </div>
                     </div>
 				</div>
+                <!-- Colored FAB button with ripple -->
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show_more">
+                  <i class="material-icons">expand_more</i>
+                </button>
+                <div class="mdl-tooltip--top mdl-tooltip" for="show_more">
+                	Scroll to see more
+                </div>
+
             </div>
             <div class="section" id="section2">
             	Section 2
