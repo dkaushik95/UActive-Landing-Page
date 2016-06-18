@@ -33,6 +33,7 @@
 				padding:0;
 			}
 			*{
+				transition:all 0.5s ease 0s;
 				margin:0px;
 				padding:0px;
 			}
@@ -162,6 +163,13 @@
 			#section5{
 				height:200px;
 			}
+        #fullpage .hide_footer {
+}
+        .hide_footer {
+	position: fixed;
+	bottom: -101px;
+	width: 100%;
+}
         </style>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -204,6 +212,22 @@
 			$('#fp-nav').css('height','19px');
 			$('#show_more').css('z-index','20');
 			$('.second').hide();
+			$('.show_footer').css('transition','all 0.5s ease 0s');
+			var x=1;
+			$('.show_footer').click(function(){
+					if(x==1){
+						$(this).css('transform','rotate(180deg)');
+						$(this).css('bottom','80px');
+						$('.hide_footer').css('bottom','0px');
+						x=2;
+					}
+					else {
+						$(this).css('transform','rotate(0deg)');
+						$(this).css('bottom','2px');
+						$('.hide_footer').css('bottom','-101px');
+						 x=1;
+					}
+				});
         });
     </script>
     
@@ -296,15 +320,30 @@
                     	<h1>Rewards & Ratings</h1>
                         <p>Rate your buddies and Pick Ups and build your own credibility by getting rated. Get rewards for being active! Earn discounts, special promotions and free products.</p>
                     </div>
-                    <button class="show_footer mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" >
+                    <button class="show_footer mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"  >
                       <i class="material-icons">expand_less</i>
                     </button>
                 </div>
             </div>
             
         </div>
+        <div class="hide_footer">
+                <footer class="mdl-mini-footer" >
+                  <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Copyright &copy; 2016 Uactive Technologies Private Limited</div>
+                  </div>
+                  <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms of Use</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Are you business?</a></li>
+                    </ul>
+                  </div>
+                </footer>
+            </div>
         <div class="left">
-                    	<img src="images/iphone.png" alt="">
-                    </div>
+        	<img src="images/iphone.png" alt="">
+        </div>
   </body>
 </html>
