@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
         <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+        
+        <link rel="stylesheet" href="css/jquery.fullPage.css">
         <style>
 			body {
 			  font-family: "Brandon Grotesque Black", "Brandon Grotesque Black Italic", "Brandon Grotesque Bold", "Brandon Grotesque Bold Italic", "Brandon Grotesque Light", "Brandon Grotesque Light Italic", "Brandon Grotesque Medium", "Brandon Grotesque Medium Italic", "Brandon Grotesque Regular", "Brandon Grotesque Regular Italic", "Brandon Grotesque Thin", "Brandon Grotesque Thin Italic";
@@ -62,27 +64,29 @@
 				top: 0;
 			}
 			.left{
-				float: left;
-				width: 50%;
-				height: 100%;
-				z-index: 5;
+				width: 26%;
+				height: 67%;
 				position: fixed;
-				top: -4px;
-				left: -6px;
+				left: 150px;
+				z-index: 20;
+				top: 12px;
+				float: left;
 			}
 			.left img{
-	margin-top: 97px;
-	width: 293px;
+				margin-top: 97px;
+				width: 293px;
+				z-index: 500;
 			}
 			
 			.right{
 				float: right;
 				width:50%;
 				height:100%;
+				
 			}
 			#logo{
-	margin-top: 100px;
-	width: 312px;
+				margin-top: 100px;
+				width: 312px;
 			}
 			.right p{
 				font-size:25px;
@@ -90,43 +94,76 @@
 			}
 			
 			
-        .links_app {
-			display: block;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-			padding-top: 28px;
-			padding-right: 28px;
-			padding-bottom: 28px;
-			padding-left: 28px;
-		}
-        .links_app #google_logo img {
-			width: 159px;
-		}
-		#header{
-			position: absolute;
-			width: 100%;
-			z-index: 4;
-			top: 0px;
-			left: 0px;
-		}
-		#section1 button{
-			z-index:4;
-			position:fixed;
-			bottom:4px;
-		}
-        .links_app #apple_logo img {
-	width: 173px;
-}
-        .links_social a img {
-	width: 51px;
-}
-        #show_more {
-	position: absolute;
-	left: 48%;
-}
+			.links_app {
+				display: block;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding-top: 28px;
+				padding-right: 28px;
+				padding-bottom: 28px;
+				padding-left: 28px;
+			}
+			.links_app #google_logo img {
+				width: 159px;
+			}
+			#header{
+				position: absolute;
+				width: 100%;
+				z-index: 4;
+				top: 0px;
+				left: 0px;
+			}
+			#section1 button{
+				z-index:4;
+				position:fixed;
+				bottom:4px;
+			}
+			.links_app #apple_logo img {
+				width: 173px;
+			}
+			.links_social a img {
+				width: 51px;
+			}
+			#show_more {
+				position: absolute;
+				left: 48%;
+			}
+				
+
+			#fp-nav ul li a span, .fp-slidesNav ul li a span {
+				background:white;
+			}
+			.right .content p {
+				color: rgba(255,248,248,1.00);
+				text-align: left;
+			}
+			#fullpage #section2 .right {
+				background-color: rgba(0,250,253,1);
+			}
+			#fullpage #section3 .right {
+				background-color: rgba(178,100,190,1);
+			}
+			#fullpage #section4 .right {
+				background-color: rgba(255,98,119,1);
+			}
+			.right .content {
+				padding-top: 66px;
+				padding-right: 66px;
+				padding-bottom: 66px;
+				padding-left: 66px;
+			}
+			.show_footer {
+				position: absolute;
+				bottom: 2px;
+				left: 48%;
+				z-index:100;
+			}
+			#section5{
+				height:200px;
+			}
         </style>
-	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<script src="js/jquery-1.11.2.min.js"></script>
 
@@ -142,35 +179,45 @@
 			});
             $('#fullpage').fullpage({
 				verticalCentered:true,
-				sectionsColor:['#000','#1bbc9b', '#4BBFC3', '#7BAABE'],
+				sectionsColor:['#000','#39445e', '#39445e', '#39445e'],
 				navigation: true,
 				navigationPosition: 'right',
+				scrollBar: true,
 				afterRender: function(){
 					//playing the video
 					$('video').get(0).play();
+				},
+				onLeave: function(index, nextIndex, direction){
+				  var vid = document.getElementById("myVideo");
+				  if(index == 1 && direction =='down'){
+						vid.pause();
+			
+					}
+			
+					else if(index == 2 && direction == 'up'){
+						vid.play();
+					}
 				}
 			});
 			$('#fp-nav').css('margin-top','0px');
 			$('#fp-nav').css('width','19px');
 			$('#fp-nav').css('height','19px');
 			$('#show_more').css('z-index','20');
-			
+			$('.second').hide();
         });
     </script>
     
   </head>
   <body>
   		<div id="fullpage">
-        	<div class="section" id="section1">
+        	<div class="section moveDown" id="section1">
             	<img src="images/header.png" alt="" id="header" >
             	<video autoplay loop muted id="myVideo">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.mp4" type="video/mp4">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.webm" type="video/webm">
 				</video>
 				<div class="layer">
-					<div class="left">
-                    	<img src="images/iphone.png" alt="">
-                    </div>
+					
                     <div class="right">
                     	<img id="logo" src="images/logo.png" alt="">
                         <h1>Sample Text <br> Comes here</h1>
@@ -189,27 +236,75 @@
                             <a href=""><img src="images/twitter.png" alt=""></a>
                         
                         </div>
-                    </div>
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show_more" onClick="$.fn.fullpage.moveSectionDown();">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show_more" onClick="$.fn.fullpage.moveSectionDown();">
                       <i class="material-icons">expand_more</i>
                     </button>
                     <div class="mdl-tooltip--top mdl-tooltip" for="show_more">
                         Scroll to see more
                     </div>
+                    </div>
+                    
 				</div>
                 <!-- Colored FAB button with ripple -->
                 
 
             </div>
             <div class="section" id="section2">
-            	Section 2
+            	<div class="right mdl-shadow--16dp">
+                	<div class="content">
+                    	<h1>Pick Up!</h1>
+                    <p id="first">Find and sign up for cool group classes, games, events and more!</p>
+                    <p id="second">Looking to host your own activities? <br> Host a pick up! Invite your friends and other peeps around you, take sign ups, chat with your group, build credibility and promote your services.</p>
+                    </div>
+                </div>
             </div>
             <div class="section" id="section3">
-            	Section 3
+            	<div class="slide" id="slide1">
+                	<div class="right mdl-shadow--16dp">
+                    	<div class="content">
+                        	<h1>
+                            	Buddy Up!
+                            </h1>
+                            <p class="first">Find cool peeps around you who share the same sport and fitness interest(s), schedule an activity, chat, meet-up and stay active!</p>
+                            <p class="second">
+                            	A one to one platform uses your location to match and connect you with people nearby who share your sports or fitness intrests.
+                            </p>
+                            
+                            <script>
+                            	var intervalID = window.setInterval(myCallback, 3000);
+								var number=1;
+								function myCallback() {
+								  if(number==1){
+									  $('.first').hide(20);
+									  $('.second').show(20);
+									  number=2;
+									}
+									else{
+										$('.first').show(20);
+									  	$('.second').hide(20);
+										number=1;
+									}
+								}
+                            </script>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="section" id="section4">
-             	Section 4
+             	<div class="right mdl-shadow--16dp">
+                	<div class="content">
+                    	<h1>Rewards & Ratings</h1>
+                        <p>Rate your buddies and Pick Ups and build your own credibility by getting rated. Get rewards for being active! Earn discounts, special promotions and free products.</p>
+                    </div>
+                    <button class="show_footer mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" >
+                      <i class="material-icons">expand_less</i>
+                    </button>
+                </div>
             </div>
+            
         </div>
+        <div class="left">
+                    	<img src="images/iphone.png" alt="">
+                    </div>
   </body>
 </html>
