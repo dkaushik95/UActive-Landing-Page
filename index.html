@@ -23,15 +23,18 @@
         <link rel="stylesheet" href="css/jquery.fullPage.css">
         <style>
 			body {
-			  font-family: "Brandon Grotesque Black", "Brandon Grotesque Black Italic", "Brandon Grotesque Bold", "Brandon Grotesque Bold Italic", "Brandon Grotesque Light", "Brandon Grotesque Light Italic", "Brandon Grotesque Medium", "Brandon Grotesque Medium Italic", "Brandon Grotesque Regular", "Brandon Grotesque Regular Italic", "Brandon Grotesque Thin", "Brandon Grotesque Thin Italic";
+			  font-family: "Brandon Grotesque Medium";
 			}
 			h1{
 				font-size: 5em;
-				font:"Brandon Grotesque Bold";
+				font:"Brandon Grotesque Medium";
 				color: #fff;
 				margin:0;
 				padding:0;
 			}
+.right.mdl-shadow--16dp .content h1 {
+	padding-top: 18px;
+}
 			*{
 				transition:all 0.5s ease 0s;
 				margin:0px;
@@ -65,18 +68,24 @@
 				top: 0;
 			}
 			.left{
-				width: 26%;
-				height: 67%;
-				position: fixed;
-				left: 150px;
+				width: 50%;
+				height: 100%;
+				position: relative;
 				z-index: 20;
-				top: 12px;
 				float: left;
 			}
-			.left img{
-				margin-top: 97px;
+			.left .iphone{
+				position: fixed;
+				top:20%;
+				left:15%;
 				width: 293px;
 				z-index: 500;
+			}
+			.left .icons_left{
+				position: fixed;
+				top:0;
+				left:0;	
+				z-index:1;
 			}
 			
 			.right{
@@ -91,7 +100,7 @@
 			}
 			.right p{
 				font-size:25px;
-				font:"Brandon Grotesque";
+				font:"Brandon Grotesque Medium";
 			}
 			
 			
@@ -114,6 +123,14 @@
 				z-index: 4;
 				top: 0px;
 				left: 0px;
+				margin-top: 0px;
+				margin-right: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				padding-top: 0px;
+				padding-right: 0px;
+				padding-bottom: 0px;
+				padding-left: 0px;
 			}
 			#section1 button{
 				z-index:4;
@@ -163,13 +180,52 @@
 			#section5{
 				height:200px;
 			}
-        #fullpage .hide_footer {
-}
-        .hide_footer {
-	position: fixed;
-	bottom: -101px;
-	width: 100%;
-}
+        
+			.hide_footer {
+				position: fixed;
+				bottom: -101px;
+				width: 100%;
+			}
+
+			.right.mdl-shadow--16dp .images img {
+				width: 608px;
+				margin-top: 167px;
+			}
+        	#section3 .image img {
+				width: 608px;
+				margin-top: 167px;
+			}
+			
+					#section4 .content .image img {
+				width: 275px;
+			}
+			
+			
+			.icons_left{
+			  animation: moveIt ease-in-out 10s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 100% 100%;
+			}
+			
+			@keyframes moveIt{
+			  0% {
+				transform:  translate(-49px,-1px)  ;
+			  }
+			  29% {
+				transform:  translate(-49px,-50px)  ;
+			  }
+			  56% {
+				transform:  translate(0px,-48px)  ;
+			  }
+			  79% {
+				transform:  translate(2px,1px)  ;
+			  }
+			  100% {
+				transform:  translate(-49px,0px)  ;
+			  }
+			}
+
+
         </style>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -180,11 +236,7 @@
     <script src="js/jquery.fullPage.js"></script>
     <script>
 		$(document).ready(function(e) {
-			$("#show_more").click(function() {
-				$('html,body').animate({
-					scrollTop: $(".section").offset().top},
-					'slow');
-			});
+			
             $('#fullpage').fullpage({
 				verticalCentered:true,
 				sectionsColor:['#000','#39445e', '#39445e', '#39445e'],
@@ -197,23 +249,38 @@
 				},
 				onLeave: function(index, nextIndex, direction){
 				  var vid = document.getElementById("myVideo");
-				  if(index == 1 && direction =='down'){
+				  if(index == 1 || direction =='down'){
 						vid.pause();
+						$('.icons_left').show(1000).fadeIn(1000); 
 			
 					}
 			
 					else if(index == 2 && direction == 'up'){
 						vid.play();
+						$('.icons_left').fadeOut(0);
 					}
-				}
+				},
+				afterLoad: function(anchor, index){
+					  if(index == 1){
+						   $('.icons_left').hide();
+					  }else{
+						   $('.icons_left').show(100);   
+					  }
+				  }
+				
 			});
 			$('#fp-nav').css('margin-top','0px');
 			$('#fp-nav').css('width','19px');
 			$('#fp-nav').css('height','19px');
-			$('#show_more').css('z-index','20');
+			$('#show_more').css('z-index','201');
 			$('.second').hide();
 			$('.show_footer').css('transition','all 0.5s ease 0s');
+			$("#show_more").css('z-index','202');
 			var x=1;
+			
+			
+			
+			
 			$('.show_footer').click(function(){
 					if(x==1){
 						$(this).css('transform','rotate(180deg)');
@@ -236,7 +303,7 @@
   		<div id="fullpage">
         	<div class="section moveDown" id="section1">
             	<img src="images/header.png" alt="" id="header" >
-            	<video autoplay loop muted id="myVideo">
+            	<video autoplay loop muted id="myVideo" style="z-index:2;">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.mp4" type="video/mp4">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.webm" type="video/webm">
 				</video>
@@ -275,6 +342,9 @@
             </div>
             <div class="section" id="section2">
             	<div class="right mdl-shadow--16dp">
+                	<div class="images">
+                    	<img src="images/heads.png" alt="">
+                    </div>
                 	<div class="content">
                     	<h1>Pick Up!</h1>
                     <p id="first">Find and sign up for cool group classes, games, events and more!</p>
@@ -285,6 +355,9 @@
             <div class="section" id="section3">
             	<div class="slide" id="slide1">
                 	<div class="right mdl-shadow--16dp">
+                    	<div class="image">
+                        	<img src="images/buddy2.png" alt="">
+                        </div>
                     	<div class="content">
                         	<h1>
                             	Buddy Up!
@@ -317,17 +390,20 @@
             <div class="section" id="section4">
              	<div class="right mdl-shadow--16dp">
                 	<div class="content">
+                		<div class="image">
+                        	<img src="images/RewardsPage.png" alt="">
+                        </div>
                     	<h1>Rewards & Ratings</h1>
                         <p>Rate your buddies and Pick Ups and build your own credibility by getting rated. Get rewards for being active! Earn discounts, special promotions and free products.</p>
                     </div>
-                    <button class="show_footer mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"  >
+                    <button class="show_footer mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"   style="z-index:203">
                       <i class="material-icons">expand_less</i>
                     </button>
                 </div>
             </div>
             
         </div>
-        <div class="hide_footer">
+        <div class="hide_footer" style="z-index:200;">
                 <footer class="mdl-mini-footer" >
                   <div class="mdl-mini-footer__left-section">
                     <div class="mdl-logo">Copyright &copy; 2016 Uactive Technologies Private Limited</div>
@@ -343,7 +419,8 @@
                 </footer>
             </div>
         <div class="left">
-        	<img src="images/iphone.png" alt="">
+        	<img src="images/Icons.png" alt="" class="icons_left">
+        	<img src="images/iphone.png" alt="" class="iphone">
         </div>
   </body>
 </html>
