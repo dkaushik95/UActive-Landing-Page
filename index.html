@@ -22,25 +22,70 @@
         
         <link rel="stylesheet" href="css/jquery.fullPage.css">
         <style>
-			body {
-			  font-family: "Brandon Grotesque Medium";
+        	*{
+        		transition: all 1s ease 0s;
+        	}
+        	@font-face{
+        		font-family: "light";
+        		src:url('fonts/Brandon_light.otf');
+        	}
+        	@font-face{
+        		font-family: "medium";
+        		src:url('fonts/Brandon_med.otf');
+        	}
+        	
+			.left{
+				width: 50%;
+				height: 100%;
+				position: relative;
+				z-index: 5;
+				float: left;
 			}
-			h1{
-				font-size: 5em;
-				font:"Brandon Grotesque Medium";
-				color: #fff;
-				margin:0;
-				padding:0;
+			.left .iphone{
+				position: fixed;
+				top:20%;
+				left:15%;
+				width: 293px;
+				z-index: 6;
 			}
-.right.mdl-shadow--16dp .content h1 {
-	padding-top: 18px;
-}
-			*{
-				transition:all 0.5s ease 0s;
-				margin:0px;
-				padding:0px;
+			.left .icons_left{
+				position: fixed;
+				width: 35%;
+				top:5%;
+				left:5%;	
+				z-index:1;
+			}	
+			#fp-nav ul li a span, .fp-slidesNav ul li a span {
+				background:white;
 			}
-        	#myVideo{
+
+			/* COMMON*/
+			.text_block h1{
+				padding: 20px;
+				text-align: center;
+				color: white;
+				font-family: 'medium';
+				font-size: 80px;
+			}
+			.text_block p{
+				padding: 20px;
+				text-align: center;
+				color: white;
+				font-family: 'light';
+				font-size: 30px;
+				line-height: 30px;
+			}
+
+
+
+			/* SECTION 1*/
+			#section1 .right{
+	    		width: 50%;
+	    		height: 100%;
+	    		position: relative;
+	    		float: right;
+	    	}
+	    	#myVideo{
 				position:absolute;
 				width:100%;
 				height:100%;
@@ -52,14 +97,8 @@
 				background-position: center center;
 				background-size: contain;
 				object-fit: cover;
-				z-index:3;
 			}
-			.section{
-				text-align:center;
-				overflow: hidden;
-			}
-			#section1 .layer{
-				color:white;
+			.layer{
 				position: absolute;
 				z-index: 4;
 				width: 100%;
@@ -67,140 +106,245 @@
 				left: 0;
 				top: 0;
 			}
-			.left{
-				width: 50%;
-				height: 100%;
+			.logo {
+				width: 100%;
+				height: 25%;
 				position: relative;
-				z-index: 20;
-				float: left;
 			}
-			.left .iphone{
-				position: fixed;
-				top:20%;
-				left:15%;
-				width: 293px;
-				z-index: 500;
+			.logo img{
+				position: absolute;
+				bottom: 0;
+				left: 25%;
+				width: 50%;
 			}
-			.left .icons_left{
-				position: fixed;
-				top:0;
-				left:0;	
-				z-index:1;
+			.text{
+				width: 100%;
+				height: 50%;
+				position: relative;
+				color: white;
+				text-align: center;
 			}
-			
-			.right{
-				float: right;
-				width:50%;
-				height:100%;
-				
+
+			.text h1{
+				padding: 20px;
+				text-align: center;
+				color: white;
+				font-family: 'medium';
+				font-size: 80px;
 			}
-			#logo{
-				margin-top: 100px;
-				width: 312px;
+			.text p{
+				padding: 20px;
+				text-align: center;
+				color: white;
+				font-family: 'light';
+				font-size: 30px;
+				line-height: 30px;
 			}
-			.right p{
-				font-size:25px;
-				font:"Brandon Grotesque Medium";
+
+			.icons{
+				width: 100%;
+				position: relative;
+				height: 50%;
 			}
-			
-			
-			.links_app {
-				display: block;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-				padding-top: 28px;
-				padding-right: 28px;
-				padding-bottom: 28px;
-				padding-left: 28px;
+			.icons .applogo{
+				width: 100%;
+				position: relative;
+				height: 10%;
 			}
-			.links_app #google_logo img {
-				width: 159px;
+			#apple{
+				width: 30%;
+				position: absolute;
+				left: 20%;
+			}
+			#google{
+				width: 30%;
+				position: absolute;
+				left: 50%;
+			}
+
+			.icons .social_logo{
+				position: relative;
+				margin-top: 5%;
+				width: 100%;
+				height: 100%;
+			}
+			.social_logo img{
+				width: 10%;
+				position: absolute;
+			}
+			#fb{
+				left: 35%;
+			}
+			#inc{
+				left: 45%;
+			}
+			#twi{
+				left: 55%;
 			}
 			#header{
 				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
 				width: 100%;
-				z-index: 4;
-				top: 0px;
-				left: 0px;
-				margin-top: 0px;
-				margin-right: 0px;
-				margin-bottom: 0px;
-				margin-left: 0px;
-				padding-top: 0px;
-				padding-right: 0px;
-				padding-bottom: 0px;
-				padding-left: 0px;
+				z-index: 5;
 			}
-			#section1 button{
-				z-index:4;
-				position:fixed;
-				bottom:4px;
+
+			/* SECTION 2*/
+			
+
+			#section2 .right{
+	    		width: 50%;
+	    		height: 100%;
+	    		position: relative;
+	    		float: right;
+	    		background-color: rgba(0,250,253,1);
+	    	}
+	    	#section2 .image_block{
+	    		position: relative;
+	    		width: 100%;
+	    		height: 50%;
+
+	    	}
+	    	#section2 .text_block{
+	    		width: 100%;
+	    		height: 50%;
+	    		position: relative;
+	    	}
+			#section2 #heads{
+				width: 100%;
+				padding: 40px;
 			}
-			.links_app #apple_logo img {
-				width: 173px;
+
+
+			/* SECTION 3*/
+
+			#section3 .right{
+	    		width: 50%;
+	    		height: 100%;
+	    		position: relative;
+	    		float: right;
+	    		background-color: rgba(178,100,190,1);
+	    	}
+	    	#section3 .image_block{
+	    		position: relative;
+	    		width: 100%;
+	    		height: 50%;
+
+	    	}
+	    	#section3 .text_block{
+	    		width: 100%;
+	    		height: 50%;
+	    		position: relative;
+	    	}
+			#section3 #heads{
+				width: 100%;
+				padding: 40px;
 			}
-			.links_social a img {
-				width: 51px;
+
+			#section3 .text_block p{
+				padding: 20px;
+				color: white;
 			}
-			#show_more {
+
+
+			/* SECTION 4 */
+			@keyframes tada{
+			  0% {
+			    transform:  rotate(0deg) scale(1.00);
+			  }
+			  20% {
+			    transform:  rotate(3deg)  ;
+			  }
+			  
+			  40% {
+			    transform:  rotate(-3deg)  ;
+			  }
+			  
+			  60% {
+			    transform:  rotate(3deg)  ;
+			  }
+			  
+			  80% {
+			    transform:  rotate(-3deg)  ;
+			  }
+			  
+			  100% {
+			    transform:  rotate(0deg)  ;
+			  }
+			}
+
+			@keyframes fadeDown{
+			  0% {
+			    opacity:0;
+			    transform:  translate(0px,-25px)  ;
+			  }
+			  100% {
+			    opacity:1;
+			    transform:  translate(0px,0px)  ;
+			  }
+			}
+
+	    	#section4 .right{
+	    		width: 50%;
+	    		height: 100%;
+	    		position: relative;
+	    		float: right;
+	    		background-color: rgba(255,98,119,1);
+	    	}
+	    	#section4 .image_block{
+	    		position: relative;
+	    		width: 100%;
+	    		height: 50%;
+
+	    	}
+	    	#section4 .text_block{
+	    		width: 100%;
+	    		height: 50%;
+	    		position: relative;
+	    		text-align: center;
+	    	}
+			#section4 #medal{
+				width: 30%;
 				position: absolute;
-				left: 48%;
-			}
+				top: 9%;
+				left: 35%;
 				
 
-			#fp-nav ul li a span, .fp-slidesNav ul li a span {
-				background:white;
 			}
-			.right .content p {
-				color: rgba(255,248,248,1.00);
-				text-align: left;
-			}
-			#fullpage #section2 .right {
-				background-color: rgba(0,250,253,1);
-			}
-			#fullpage #section3 .right {
-				background-color: rgba(178,100,190,1);
-			}
-			#fullpage #section4 .right {
-				background-color: rgba(255,98,119,1);
-			}
-			.right .content {
-				padding-top: 66px;
-				padding-right: 66px;
-				padding-bottom: 66px;
-				padding-left: 66px;
-			}
-			.show_footer {
+			#section4 #star1{
+				width: 10%;
 				position: absolute;
-				bottom: 2px;
-				left: 48%;
-				z-index:100;
+				top: 80%;
+				left: 35%;
+				animation: tada ease-in-out 2s;
+				  animation-iteration-count: infinite;
+				  transform-origin: 50% 50%;
 			}
-			#section5{
-				height:200px;
+			#section4 #star2{
+				width: 10%;
+				position: absolute;
+				top: 80%;
+				left: 45%;
+				animation: tada ease-in-out 2s;
+			  	animation-iteration-count: infinite;
+			  	transform-origin: 50% 50%;
 			}
-        
-			.hide_footer {
-				position: fixed;
-				bottom: -101px;
-				width: 100%;
+			#section4 #star3{
+				width: 10%;
+				position: absolute;
+				top: 80%;
+				left: 55%;
+				animation: tada ease-in-out 2s;
+			  	animation-iteration-count: infinite;
+			  	transform-origin: 50% 50%;
 			}
 
-			.right.mdl-shadow--16dp .images img {
-				width: 608px;
-				margin-top: 167px;
+			#section4 .text_block p{
+				padding: 20px;
+				color: white;
 			}
-        	#section3 .image img {
-				width: 608px;
-				margin-top: 167px;
-			}
-			
-					#section4 .content .image img {
-				width: 275px;
-			}
-			
-			
+			/* Moving icons*/
 			.icons_left{
 			  animation: moveIt ease-in-out 10s;
 			  animation-iteration-count: infinite;
@@ -225,6 +369,31 @@
 			  }
 			}
 
+			.outer_layer{
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				z-index: 5;
+				
+			}
+			.outer_layer button{
+				position: absolute;
+				bottom: 1%;
+				left: 48%;
+				z-index: 9;
+				transition: all 1s ease 0s;
+			}
+			.outer_layer .footer{
+				position: absolute;
+				bottom: -12%;
+				left: 0;
+				width: 100%;
+				height: 12%;
+				z-index: 6;
+			}
+
 
         </style>
 	
@@ -236,7 +405,7 @@
     <script src="js/jquery.fullPage.js"></script>
     <script>
 		$(document).ready(function(e) {
-			
+			var flag_footer=0;
             $('#fullpage').fullpage({
 				verticalCentered:true,
 				sectionsColor:['#000','#39445e', '#39445e', '#39445e'],
@@ -244,183 +413,209 @@
 				navigationPosition: 'right',
 				scrollBar: true,
 				afterRender: function(){
-					//playing the video
 					$('video').get(0).play();
 				},
 				onLeave: function(index, nextIndex, direction){
 				  var vid = document.getElementById("myVideo");
 				  if(index == 1 || direction =='down'){
 						vid.pause();
-						$('.icons_left').show(1000).fadeIn(1000); 
-			
 					}
-			
 					else if(index == 2 && direction == 'up'){
 						vid.play();
-						$('.icons_left').fadeOut(0);
+						$('.icons_left').hide();
 					}
+
+
+					if (index==4 && direction=='up') {
+						if (flag_footer==1) {
+							flag_footer=0;
+							$('.outer_layer button').css('bottom','1%');
+							$('.outer_layer button').css('transform','rotate(0deg)');
+							$('.footer').css('bottom','-12%');
+							x=1;
+						}
+						else{
+
+						}
+					}
+
+
+
+
 				},
 				afterLoad: function(anchor, index){
-					  if(index == 1){
-						   $('.icons_left').hide();
-					  }else{
-						   $('.icons_left').show(100);   
-					  }
-				  }
+					if (index==4) {
+						$('#icon_holder').html("expand_less");
+						$('#medal').css('animation','fadeDown ease-in-out 0.5s');
+						$('#medal').css('animation-iteration-count','1');
+					}
+					else{
+						$('#icon_holder').html("expand_more");
+						$('#medal').css('animation','');
+						$('#medal').css('animation-iteration-count','');
+					}
+
+					if (index==1) {
+						$('.icons_left').hide();
+					}
+					else if(index==2){
+						$('.icons_left').fadeIn(500);
+					}
+					else{
+						$('.icons_left').show();
+					}
+				}
 				
 			});
 			$('#fp-nav').css('margin-top','0px');
 			$('#fp-nav').css('width','19px');
 			$('#fp-nav').css('height','19px');
-			$('#show_more').css('z-index','201');
-			$('.second').hide();
-			$('.show_footer').css('transition','all 0.5s ease 0s');
-			$("#show_more").css('z-index','202');
 			var x=1;
-			
-			
-			
-			
-			$('.show_footer').click(function(){
-					if(x==1){
+			$('.outer_layer button').click(function() {
+				if (document.getElementById('icon_holder').innerHTML=='expand_more') {
+					$.fn.fullpage.moveSectionDown();
+				}
+				else{
+					if (x==1) {
+						flag_footer=1;
+						$(this).css('bottom','9%');
 						$(this).css('transform','rotate(180deg)');
-						$(this).css('bottom','80px');
-						$('.hide_footer').css('bottom','0px');
+						$('.footer').css('bottom','0');
 						x=2;
 					}
-					else {
+					else{
+						flag_footer=0;
+						$(this).css('bottom','1%');
 						$(this).css('transform','rotate(0deg)');
-						$(this).css('bottom','2px');
-						$('.hide_footer').css('bottom','-101px');
-						 x=1;
+						$('.footer').css('bottom','-12%');
+						x=1;
 					}
-				});
+					
+				}
+			});
         });
     </script>
     
   </head>
   <body>
   		<div id="fullpage">
-        	<div class="section moveDown" id="section1">
-            	<img src="images/header.png" alt="" id="header" >
-            	<video autoplay loop muted id="myVideo" style="z-index:2;">
+  			<!-- SECTION 1 -->
+        	<div class="section" id="section1">
+				<img src="images/header.png" alt="" id="header" >
+	        	<video autoplay loop muted id="myVideo" style="z-index:2;">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.mp4" type="video/mp4">
 					<source src="http://uactiv.co/wp-content/themes/launch/UACTIVE-WEB-FADE.webm" type="video/webm">
 				</video>
-				<div class="layer">
-					
-                    <div class="right">
-                    	<img id="logo" src="images/logo.png" alt="">
-                        <h1>Sample Text <br> Comes here</h1>
-                        <p>Your go to social network for Sports <br>and Fitness</p>
-                        <div class="links_app">
-                        	<a href="" id="google_logo">
-                            <img alt="Get it on Google Play" src="images/google_badge.png" />
-                            </a>
-                            <a href="" id="apple_logo">
-                            <img src="images/apple_badge.png" alt="">
-                            </a>
-                        </div>
-                        <div class="links_social">
-                        	<a href=""><img src="images/facebook.png" alt=""></a>
-                            <a href=""><img src="images/instagram.png" alt=""></a>
-                            <a href=""><img src="images/twitter.png" alt=""></a>
-                        
-                        </div>
-                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="show_more" onClick="$.fn.fullpage.moveSectionDown();">
-                      <i class="material-icons">expand_more</i>
-                    </button>
-                    <div class="mdl-tooltip--top mdl-tooltip" for="show_more">
-                        Scroll to see more
-                    </div>
-                    </div>
-                    
-				</div>
-                <!-- Colored FAB button with ripple -->
-                
 
-            </div>
+				<div class="layer">
+					<div class="left">	
+					</div>
+					<div class="right">
+						<div class="logo">
+							<img src="images/logo.png" alt="">
+						</div>
+						<div class="text">
+							<h1>
+								Sample Text 
+								<br> Comes here
+							</h1>
+							<p>
+								Your go to social network for Sports and Fitness
+							</p>
+						</div>
+						<div class="icons">
+							<div class="applogo">
+								<img src="images/apple_badge.png" alt="" id="apple">
+								<img src="images/google_badge.png" alt="" id="google">
+							</div>
+							<div class="social_logo">
+								<img src="images/facebook.png" alt="" id="fb">
+								<img src="images/instagram.png" alt="" id="inc">
+								<img src="images/twitter.png" alt="" id="twi">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!--- SECTION 2 -->
             <div class="section" id="section2">
-            	<div class="right mdl-shadow--16dp">
-                	<div class="images">
-                    	<img src="images/heads.png" alt="">
-                    </div>
-                	<div class="content">
-                    	<h1>Pick Up!</h1>
-                    <p id="first">Find and sign up for cool group classes, games, events and more!</p>
-                    <p id="second">Looking to host your own activities? <br> Host a pick up! Invite your friends and other peeps around you, take sign ups, chat with your group, build credibility and promote your services.</p>
-                    </div>
-                </div>
-            </div>
+				<div class="right">
+					<div class="image_block">
+						<img src="images/heads.png" alt="" id="heads">
+					</div>
+					<div class="text_block">
+						<h1>
+							Pick Up!
+						</h1>
+						<p>
+							Find and sign up for cool group classes, games, events and more!
+							<br> Looking to host your own activities? 
+							<br> Host a pick up! Invite your friends and other peeps around you, take sign ups, chat with your group, build credibility and promote your services.
+						</p>
+					</div>
+				</div>
+			</div>
+            <!--- SECTION 3 -->
             <div class="section" id="section3">
-            	<div class="slide" id="slide1">
-                	<div class="right mdl-shadow--16dp">
-                    	<div class="image">
-                        	<img src="images/buddy2.png" alt="">
-                        </div>
-                    	<div class="content">
-                        	<h1>
-                            	Buddy Up!
-                            </h1>
-                            <p class="first">Find cool peeps around you who share the same sport and fitness interest(s), schedule an activity, chat, meet-up and stay active!</p>
-                            <p class="second">
-                            	A one to one platform uses your location to match and connect you with people nearby who share your sports or fitness intrests.
-                            </p>
-                            
-                            <script>
-                            	var intervalID = window.setInterval(myCallback, 3000);
-								var number=1;
-								function myCallback() {
-								  if(number==1){
-									  $('.first').hide(20);
-									  $('.second').show(20);
-									  number=2;
-									}
-									else{
-										$('.first').show(20);
-									  	$('.second').hide(20);
-										number=1;
-									}
-								}
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				<div class="right">
+					<div class="image_block">
+						<img src="images/heads.png" alt="" id="heads">
+					</div>
+					<div class="text_block">
+						<h1>
+							Buddy Up!
+						</h1>
+						<p>
+							Find cool peeps around you who share the same sport and fitness interest(s), schedule an activity, chat, meet-up and stay active!
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--- SECTION 4 -->
             <div class="section" id="section4">
-             	<div class="right mdl-shadow--16dp">
-                	<div class="content">
-                		<div class="image">
-                        	<img src="images/RewardsPage.png" alt="">
-                        </div>
-                    	<h1>Rewards & Ratings</h1>
-                        <p>Rate your buddies and Pick Ups and build your own credibility by getting rated. Get rewards for being active! Earn discounts, special promotions and free products.</p>
-                    </div>
-                    <button class="show_footer mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"   style="z-index:203">
-                      <i class="material-icons">expand_less</i>
-                    </button>
-                </div>
-            </div>
-            
-        </div>
-        <div class="hide_footer" style="z-index:200;">
-                <footer class="mdl-mini-footer" >
-                  <div class="mdl-mini-footer__left-section">
-                    <div class="mdl-logo">Copyright &copy; 2016 Uactive Technologies Private Limited</div>
-                  </div>
-                  <div class="mdl-mini-footer__right-section">
-                    <ul class="mdl-mini-footer__link-list">
-                      <li><a href="#">Privacy Policy</a></li>
-                      <li><a href="#">Terms of Use</a></li>
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="#">Are you business?</a></li>
-                    </ul>
-                  </div>
-                </footer>
-            </div>
-        <div class="left">
-        	<img src="images/Icons.png" alt="" class="icons_left">
-        	<img src="images/iphone.png" alt="" class="iphone">
-        </div>
+				<div class="right">
+					<div class="image_block">
+						<img src="images/RewardsPage_Medal.png" alt="" id="medal">
+						<img src="images/RewardsPage_Star.png" alt="" id="star1">
+						<img src="images/RewardsPage_Star.png" alt="" id="star2">
+						<img src="images/RewardsPage_Star.png" alt="" id="star3">
+					</div>
+					<div class="text_block">
+						<h1>
+							Rewards & Ratings
+						</h1>
+						<p>
+							Rate your buddies and Pick Ups and build your own credibility by getting rated. Get rewarded for being active! Earn discounts, special promotions and free products.
+						</p>
+					</div>
+				</div>
+        	</div>
+		</div>
+		<!--- COMMON SECTION -->
+		<div class="outer_layer">
+			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+					<i class="material-icons" id="icon_holder">expand_more</i>
+			</button>
+			<div class="footer" >
+	        	<footer class="mdl-mini-footer" >
+	              	<div class="mdl-mini-footer__left-section">
+	                	<div class="mdl-logo">Copyright &copy; 2016 Uactive Technologies Private Limited</div>
+	          		</div>
+	              	<div class="mdl-mini-footer__right-section">
+	                	<ul class="mdl-mini-footer__link-list">
+	                  		<li><a href="#">Privacy Policy</a></li>
+	                  		<li><a href="#">Terms of Use</a></li>
+	                  		<li><a href="#">Contact Us</a></li>
+	                  		<li><a href="#">Are you business?</a></li>
+	                	</ul>
+	              	</div>
+	            </footer>
+	        </div>
+	        <div class="left">
+	        	<img src="images/Icons.png" alt="" class="icons_left">
+	        	<img src="images/iphone.png" alt="" class="iphone">
+	        </div>
+       	</div>
+	        
   </body>
 </html>
