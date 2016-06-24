@@ -200,20 +200,248 @@
 	    		float: right;
 	    		background-color: rgba(0,250,253,1);
 	    	}
-	    	#section2 .image_block{
-	    		position: relative;
-	    		width: 100%;
-	    		height: 50%;
-
-	    	}
+	    	
 	    	#section2 .text_block{
 	    		width: 100%;
 	    		height: 50%;
 	    		position: relative;
 	    	}
-			#section2 #heads{
-				width: 100%;
-				padding: 40px;
+			
+
+
+			.images{
+	    		position: relative;
+	    		width: 100%;
+	    		height: 50%;
+	    		z-index: 1;
+	    		margin-top: 20px;
+	    	}
+	    	.road img{
+	    		width: 100%;
+	    		bottom: 8%;
+	    		left: 0;
+	    		z-index: 3;
+	    	}
+	    	.buildings img{
+				width: 70%;
+				z-index: 2;
+	    	}
+	    	#upper{
+	    		top: 1%;
+	    		left: 2%;
+	    	}
+	    	#lower{
+	    		bottom: 10%;
+	    		left: 2%;
+	    	}
+	    	img{
+	    		position: absolute;
+	    	}
+	    	#c1{
+				top: 0%;
+				left: 33%;
+				width: 9%;
+				animation: fadeout ease-in-out 5s;
+			  	animation-iteration-count: infinite;
+	    	}
+	    	#c4{
+				top: 40%;
+				left: 20%;
+				width: 10%;
+				animation: fadeout ease-in-out 5s;
+			  	animation-iteration-count: infinite;
+	    	}
+	    	#c3{
+				top: 45%;
+				left: 60%;
+				width: 20%;
+				animation: fadeout ease-in-out 5s;
+			  	animation-iteration-count: infinite;
+	    	}
+	    	#c2{
+				top: 10%;
+				left: 65%;
+				width: 9%;
+				animation: fadeout ease-in-out 5s;
+			 	animation-iteration-count: infinite;
+	    	}
+	    	#cycler{
+				width: 7%;
+				bottom: 10%;
+				left: 5%;
+				z-index: 5;
+				animation: animationFrames ease-in-out 10s;
+			  	animation-iteration-count: infinite;
+			  	transform-origin: 50% 50%;
+	    	}
+	    	#pin_cycler{
+	    		width: 7%;
+				bottom: 20%;
+				left: 5%;
+				animation: animationFrames ease-in-out 10s;
+			  	animation-iteration-count: infinite;
+			  	transform-origin: 50% 50%;
+			  	z-index: 10;
+
+	    	}
+	    	#text_cycler_box{
+	    		position: absolute;
+	    		width: 30%;
+				bottom: 25%;
+				left: 5%;
+				animation: animationFrames ease-in-out 10s;
+			  	animation-iteration-count: infinite;
+			  	transform-origin: 50% 50%;
+			  	z-index: 7;
+	    	}
+	    	#text_cycler{
+	    		position: absolute;
+				bottom: 21.5%;
+				left: 13%;
+				font-size: 12px;
+				z-index: 8;
+				animation: animationFrames ease-in-out 10s;
+			  	animation-iteration-count: infinite;
+			  	transform-origin: 50% 50%;
+
+	    	}
+			@keyframes animationFrames{
+			  0% {
+			    transform:  translate(0px,0px)  ;
+			  }
+			  
+			  50% {
+			    transform:  translate(488px,0px)  ;
+			  }
+			  
+			  100% {
+			    transform:  translate(0px,0px)  ;
+			  }
+			}	
+			@keyframes fadeout{
+			  0% {
+			    opacity:0;
+			    transform:  translate(0px,0px)  ;
+			  }
+			  50% {
+			    opacity:1;
+			    transform:  translate(50px,0px)  ;
+			  }
+			  100% {
+			    opacity:0;
+			    transform:  translate(100px,0px)  ;
+			  }
+			}
+
+			#yoga{
+				position: absolute;
+				top: 0;
+				left: 20%;
+				width: 10%;
+				z-index: 6;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+			}
+			#yogabox{
+				position: absolute;
+				top: 5%;
+				left: 4%;
+				z-index: 5;
+				width: 20%;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+
+			}
+			#yogatext{
+				position: absolute;
+				top: 5%;
+				left: 7%;
+				z-index: 5;
+				font-size: 12px;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+			}
+
+			#zumba{
+				position: absolute;
+				top: 0;
+				left: 55%;
+				width: 10%;
+				z-index: 8;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+			}
+			#zumbabox{
+				position: absolute;
+				top: 5%;
+				left: 60%;
+				z-index: 5;
+				width: 24%;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+
+			}
+			#zumbatext{
+				position: absolute;
+				top: 5%;
+				left: 65%;
+				z-index: 5;
+				font-size: 12px;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+			}
+
+			#football{
+				position: absolute;
+				top: 50%;
+				left: 55%;
+				width: 10%;
+				z-index: 8;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+			}
+			#footbox{
+				position: absolute;
+				top: 55%;
+				left: 40%;
+				z-index: 5;
+				width: 24%;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+
+			}
+			#foottext{
+				position: absolute;
+				top: 55%;
+				left: 42%;
+				z-index: 5;
+				font-size: 12px;
+				animation: poptop ease-in-out 2s;
+			  	animation-iteration-count: 1;
+			  	transform-origin: 50% 50%;
+			}
+
+			@keyframes poptop{
+			  0% {
+			    opacity:0;
+			    transform:  translate(0px,-50px)  ;
+			  }
+			  50% {
+			    opacity:0;
+			    transform:  translate(0px,-50px)  ;
+			  }
+			  100% {
+			    opacity:1;
+			    transform:  translate(0px,0px)  ;
+			  }
 			}
 
 
@@ -460,8 +688,13 @@
 					}
 					else if(index==2){
 						$('.icons_left').fadeIn(500);
+						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation','poptop ease-in-out 2s');
+						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation-iteration-count','1');
 					}
 					else{
+
+						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation','');
+						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation-iteration-count','');
 						$('.icons_left').show();
 					}
 				}
@@ -480,7 +713,8 @@
 						flag_footer=1;
 						$(this).css('bottom','9%');
 						$(this).css('transform','rotate(180deg)');
-						$('.footer').css('bottom','0');
+						$('.footer').css('bottom','-1%');
+
 						x=2;
 					}
 					else{
@@ -540,8 +774,42 @@
             <!--- SECTION 2 -->
             <div class="section" id="section2">
 				<div class="right">
-					<div class="image_block">
-						<img src="images/heads.png" alt="" id="heads">
+					<div class="images">
+						<div class="road">
+							<img src="images/PickUp_Road.png" alt="">
+						</div>
+						<div class="buildings">
+							<img src="images/PickUp_BuildingSet1.png" alt="" id="upper">
+							<img src="images/PickUp_BuildingSet2.png" alt="" id="lower">
+						</div>
+						<div class="clouds">
+							<img src="images/PickUp_Cloud.png" alt="" id="c1">
+							<img src="images/PickUp_CloudInverted.png" alt="" id="c2">
+							<img src="images/PickUp_DoubleCloud.png" alt="" id="c3">
+							<img src="images/PickUp_Cloud.png" alt="" id="c4">
+						</div>
+						<div class="cycle">
+							<img src="images/PickUp_Cycle.png" alt="" id="cycler">
+							<img src="images/PickUp_Pin2.png" alt="" id="pin_cycler">
+							<img src="images/PickUp_Pin2Textbox.png" alt="" id="text_cycler_box">
+							<p id="text_cycler">Cycling, Unlimited spots</p>
+						</div>
+						<div class="yoga">
+							<img src="images/PickUp_Pin4.png" alt="" id="yoga">
+							<img src="images/PickUp_Pin4Textbox.png" alt="" id="yogabox">
+							<p id="yogatext">Yoga, 1 spot</p>
+						</div>
+						<div class="zumba">
+							<img src="images/PickUp_Pin3.png" alt="" id="zumba">
+							<img src="images/PickUp_Pin3Textbox.png" alt="" id="zumbabox">
+							<p id="zumbatext">Zumba, 2 spots left</p>
+						</div>
+
+						<div class="football">
+							<img src="images/PickUp_Pin1.png" alt="" id="football">
+							<img src="images/PickUp_Pin1Textbox.png" alt="" id="footbox">
+							<p id="foottext">Football, H1 Turf</p>
+						</div>
 					</div>
 					<div class="text_block">
 						<h1>
