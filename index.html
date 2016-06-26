@@ -71,7 +71,7 @@
 				padding: 20px;
 				text-align: center;
 				color: white;
-				font-family: 'light';
+				font-family: 'medium';
 				font-size: 30px;
 				line-height: 30px;
 			}
@@ -136,7 +136,7 @@
 				padding: 20px;
 				text-align: center;
 				color: white;
-				font-family: 'light';
+				font-family: 'medium';
 				font-size: 30px;
 				line-height: 30px;
 			}
@@ -198,7 +198,7 @@
 	    		height: 100%;
 	    		position: relative;
 	    		float: right;
-	    		background-color: rgba(0,250,253,1);
+	    		background-color: #2dc3ea;
 	    	}
 	    	
 	    	#section2 .text_block{
@@ -211,14 +211,14 @@
 
 			.images{
 	    		position: relative;
-	    		width: 100%;
+	    		width: 90%;
 	    		height: 50%;
 	    		z-index: 1;
 	    		margin-top: 20px;
 	    	}
 	    	.road img{
 	    		width: 100%;
-	    		bottom: 8%;
+	    		top: 0;
 	    		left: 0;
 	    		z-index: 3;
 	    	}
@@ -266,16 +266,17 @@
 			 	animation-iteration-count: infinite;
 	    	}
 	    	#cycler{
-				width: 7%;
-				bottom: 10%;
+				width: 8%;
+				bottom: 6%;
 				left: 5%;
 				z-index: 5;
-				animation: animationFrames ease-in-out 10s;
+				animation: moveandcomeback ease-in-out 10s;
 			  	animation-iteration-count: infinite;
-			  	transform-origin: 50% 50%;
+			  	transform-origin: 0% 50%;
+				
 	    	}
 	    	#pin_cycler{
-	    		width: 7%;
+	    		width: 8%;
 				bottom: 20%;
 				left: 5%;
 				animation: animationFrames ease-in-out 10s;
@@ -286,9 +287,9 @@
 	    	}
 	    	#text_cycler_box{
 	    		position: absolute;
-	    		width: 30%;
-				bottom: 25%;
-				left: 5%;
+	    		width: 15%;
+				bottom: 26%;
+				left: 6%;
 				animation: animationFrames ease-in-out 10s;
 			  	animation-iteration-count: infinite;
 			  	transform-origin: 50% 50%;
@@ -296,7 +297,7 @@
 	    	}
 	    	#text_cycler{
 	    		position: absolute;
-				bottom: 21.5%;
+				bottom: 22%;
 				left: 13%;
 				font-size: 12px;
 				z-index: 8;
@@ -305,6 +306,27 @@
 			  	transform-origin: 50% 50%;
 
 	    	}
+
+	    	
+			@keyframes moveandcomeback{
+			  0% {
+			    transform:  translate(0px,0px)  scaleX(1.00) ;
+			  }
+			  45% {
+			    transform:  translate(488px,0px)  scaleX(1.00) ;
+			  }
+			  50% {
+			    transform:  translate(488px,0px)  scaleX(-1.00) ;
+			  }
+			  95% {
+			    transform:  translate(30px,0px)  scaleX(-1.00) ;
+			  }
+			  100% {
+			    transform:  translate(0px,0px)  scaleX(1.00) ;
+			  }
+			}
+
+
 			@keyframes animationFrames{
 			  0% {
 			    transform:  translate(0px,0px)  ;
@@ -476,6 +498,28 @@
 			}
 
 
+			/*
+			.pins{
+			  animation: heartbeat linear 1s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 50% 50%;
+			}
+
+			@keyframes heartbeat{
+			  0% {
+			    transform:  scaleX(1.00) scaleY(1.00) ;
+			  }
+			  50% {
+			    transform:  scaleX(1.20) scaleY(1.20) ;
+			  }
+			  100% {
+			    transform:  scaleX(1.00) scaleY(1.00) ;
+			  }
+			}
+
+			*/
+
+
 			/* SECTION 4 */
 			@keyframes tada{
 			  0% {
@@ -606,7 +650,14 @@
 				z-index: 5;
 				
 			}
-			.outer_layer button{
+			#top_button{
+				position: absolute;
+				top: 1%;
+				left: 48%;
+				z-index: 9;
+				transition: all 1s ease 0s;
+			}
+			#bottom_button{
 				position: absolute;
 				bottom: 1%;
 				left: 48%;
@@ -642,23 +693,24 @@
 				scrollBar: true,
 				afterRender: function(){
 					$('video').get(0).play();
+					$('top_button').hide();
 				},
 				onLeave: function(index, nextIndex, direction){
 				  var vid = document.getElementById("myVideo");
 				  if(index == 1 || direction =='down'){
 						vid.pause();
+						$('#top_button').show();
 					}
 					else if(index == 2 && direction == 'up'){
 						vid.play();
 						$('.icons_left').hide();
+						$('#top_button').hide();
 					}
-
-
 					if (index==4 && direction=='up') {
 						if (flag_footer==1) {
 							flag_footer=0;
-							$('.outer_layer button').css('bottom','1%');
-							$('.outer_layer button').css('transform','rotate(0deg)');
+							$('#bottom_button').css('bottom','1%');
+							$('#bottom_button').css('transform','rotate(0deg)');
 							$('.footer').css('bottom','-12%');
 							x=1;
 						}
@@ -673,28 +725,24 @@
 				},
 				afterLoad: function(anchor, index){
 					if (index==4) {
-						$('#icon_holder').html("expand_less");
+						$('#icon_holder_bottom').html("expand_less");
 						$('#medal').css('animation','fadeDown ease-in-out 0.5s');
 						$('#medal').css('animation-iteration-count','1');
 					}
 					else{
-						$('#icon_holder').html("expand_more");
+						$('#icon_holder_bottom').html("expand_more");
 						$('#medal').css('animation','');
 						$('#medal').css('animation-iteration-count','');
 					}
 
 					if (index==1) {
 						$('.icons_left').hide();
+						$('#top_button').hide();
 					}
 					else if(index==2){
 						$('.icons_left').fadeIn(500);
-						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation','poptop ease-in-out 2s');
-						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation-iteration-count','1');
 					}
 					else{
-
-						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation','');
-						$('#foottext,#footbox,#football,#zumbatext,#zumbabox,#zumba,#yogatext,#yogabox,#yoga').css('animation-iteration-count','');
 						$('.icons_left').show();
 					}
 				}
@@ -704,8 +752,8 @@
 			$('#fp-nav').css('width','19px');
 			$('#fp-nav').css('height','19px');
 			var x=1;
-			$('.outer_layer button').click(function() {
-				if (document.getElementById('icon_holder').innerHTML=='expand_more') {
+			$('#bottom_button').click(function() {
+				if (document.getElementById('icon_holder_bottom').innerHTML=='expand_more') {
 					$.fn.fullpage.moveSectionDown();
 				}
 				else{
@@ -727,6 +775,11 @@
 					
 				}
 			});
+
+			$('#top_button').click(function() {
+				$.fn.fullpage.moveSectionUp();
+			});
+
         });
     </script>
     
@@ -778,10 +831,6 @@
 						<div class="road">
 							<img src="images/PickUp_Road.png" alt="">
 						</div>
-						<div class="buildings">
-							<img src="images/PickUp_BuildingSet1.png" alt="" id="upper">
-							<img src="images/PickUp_BuildingSet2.png" alt="" id="lower">
-						</div>
 						<div class="clouds">
 							<img src="images/PickUp_Cloud.png" alt="" id="c1">
 							<img src="images/PickUp_CloudInverted.png" alt="" id="c2">
@@ -792,23 +841,23 @@
 							<img src="images/PickUp_Cycle.png" alt="" id="cycler">
 							<img src="images/PickUp_Pin2.png" alt="" id="pin_cycler">
 							<img src="images/PickUp_Pin2Textbox.png" alt="" id="text_cycler_box">
-							<p id="text_cycler">Cycling, Unlimited spots</p>
+							<p id="text_cycler">Cycling</p>
 						</div>
 						<div class="yoga">
 							<img src="images/PickUp_Pin4.png" alt="" id="yoga">
 							<img src="images/PickUp_Pin4Textbox.png" alt="" id="yogabox">
-							<p id="yogatext">Yoga, 1 spot</p>
+							<p id="yogatext">Yoga Class</p>
 						</div>
 						<div class="zumba">
 							<img src="images/PickUp_Pin3.png" alt="" id="zumba">
 							<img src="images/PickUp_Pin3Textbox.png" alt="" id="zumbabox">
-							<p id="zumbatext">Zumba, 2 spots left</p>
+							<p id="zumbatext">Zumba Workshop</p>
 						</div>
 
 						<div class="football">
 							<img src="images/PickUp_Pin1.png" alt="" id="football">
 							<img src="images/PickUp_Pin1Textbox.png" alt="" id="footbox">
-							<p id="foottext">Football, H1 Turf</p>
+							<p id="foottext">Football Game</p>
 						</div>
 					</div>
 					<div class="text_block">
@@ -861,8 +910,12 @@
 		</div>
 		<!--- COMMON SECTION -->
 		<div class="outer_layer">
-			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-					<i class="material-icons" id="icon_holder">expand_more</i>
+
+			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="top_button">
+					<i class="material-icons" id="icon_holder_top">expand_less</i>
+			</button>
+			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="bottom_button">
+					<i class="material-icons" id="icon_holder_bottom">expand_more</i>
 			</button>
 			<div class="footer" >
 	        	<footer class="mdl-mini-footer" >
