@@ -209,122 +209,51 @@
 			
 
 
-			.images{
+			#section2 .images{
 	    		position: relative;
-	    		width: 90%;
+	    		width: 100%;
 	    		height: 50%;
 	    		z-index: 1;
-	    		margin-top: 20px;
 	    	}
-	    	.road img{
-	    		width: 100%;
-	    		top: 0;
+	    	#section2 .images img{
+	    		position: absolute;
+	    		bottom: 0;
 	    		left: 0;
-	    		z-index: 3;
+	    		width: 100%;
 	    	}
-	    	.buildings img{
-				width: 70%;
-				z-index: 2;
-	    	}
-	    	#upper{
-	    		top: 1%;
-	    		left: 2%;
-	    	}
-	    	#lower{
-	    		bottom: 10%;
-	    		left: 2%;
-	    	}
-	    	img{
-	    		position: absolute;
-	    	}
-	    	#c1{
-				top: 0%;
-				left: 33%;
-				width: 9%;
+	    	.pins{
+			  	animation: poptop ease-in-out 5s;
+			  	animation-iteration-count: infinite;
+			}
+			.cloud{
 				animation: fadeout ease-in-out 5s;
 			  	animation-iteration-count: infinite;
-	    	}
-	    	#c4{
-				top: 40%;
-				left: 20%;
-				width: 10%;
-				animation: fadeout ease-in-out 5s;
-			  	animation-iteration-count: infinite;
-	    	}
-	    	#c3{
-				top: 45%;
-				left: 60%;
-				width: 20%;
-				animation: fadeout ease-in-out 5s;
-			  	animation-iteration-count: infinite;
-	    	}
-	    	#c2{
-				top: 10%;
-				left: 65%;
-				width: 9%;
-				animation: fadeout ease-in-out 5s;
-			 	animation-iteration-count: infinite;
-	    	}
-	    	#cycler{
-				width: 8%;
-				bottom: 6%;
-				left: 5%;
-				z-index: 5;
-				animation: moveandcomeback ease-in-out 10s;
-			  	animation-iteration-count: infinite;
-			  	transform-origin: 0% 50%;
-				
-	    	}
-	    	#pin_cycler{
-	    		width: 8%;
-				bottom: 20%;
-				left: 5%;
-				animation: animationFrames ease-in-out 10s;
-			  	animation-iteration-count: infinite;
-			  	transform-origin: 50% 50%;
-			  	z-index: 10;
-
-	    	}
-	    	#text_cycler_box{
-	    		position: absolute;
-	    		width: 15%;
-				bottom: 26%;
-				left: 6%;
-				animation: animationFrames ease-in-out 10s;
-			  	animation-iteration-count: infinite;
-			  	transform-origin: 50% 50%;
-			  	z-index: 7;
-	    	}
-	    	#text_cycler{
-	    		position: absolute;
-				bottom: 22%;
-				left: 13%;
-				font-size: 12px;
-				z-index: 8;
-				animation: animationFrames ease-in-out 10s;
-			  	animation-iteration-count: infinite;
-			  	transform-origin: 50% 50%;
-
-	    	}
-
-	    	
+			}
+			.cycle{
+			  animation: moveandcomeback ease-in-out 10s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 50% 50%;
+			}
+			
 			@keyframes moveandcomeback{
 			  0% {
 			    transform:  translate(0px,0px)  scaleX(1.00) ;
 			  }
-			  45% {
-			    transform:  translate(488px,0px)  scaleX(1.00) ;
+			  44% {
+			    transform:  translate(100px,0px)  scaleX(1.00) ;
 			  }
-			  50% {
-			    transform:  translate(488px,0px)  scaleX(-1.00) ;
+			  47% {
+			    transform:  translate(100px,0px)  scaleX(-1.00) ;
 			  }
-			  95% {
-			    transform:  translate(30px,0px)  scaleX(-1.00) ;
+			  97% {
+			    transform:  translate(0px,0px)  scaleX(-1.00) ;
 			  }
 			  100% {
 			    transform:  translate(0px,0px)  scaleX(1.00) ;
 			  }
 			}
+
+
 
 
 			@keyframes animationFrames{
@@ -333,7 +262,7 @@
 			  }
 			  
 			  50% {
-			    transform:  translate(488px,0px)  ;
+			    transform:  translate(488px,0px);
 			  }
 			  
 			  100% {
@@ -353,102 +282,6 @@
 			    opacity:0;
 			    transform:  translate(100px,0px)  ;
 			  }
-			}
-
-			#yoga{
-				position: absolute;
-				top: 0;
-				left: 20%;
-				width: 10%;
-				z-index: 6;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-			}
-			#yogabox{
-				position: absolute;
-				top: 5%;
-				left: 4%;
-				z-index: 5;
-				width: 20%;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-
-			}
-			#yogatext{
-				position: absolute;
-				top: 5%;
-				left: 7%;
-				z-index: 5;
-				font-size: 12px;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-			}
-
-			#zumba{
-				position: absolute;
-				top: 0;
-				left: 55%;
-				width: 10%;
-				z-index: 8;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-			}
-			#zumbabox{
-				position: absolute;
-				top: 5%;
-				left: 60%;
-				z-index: 5;
-				width: 24%;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-
-			}
-			#zumbatext{
-				position: absolute;
-				top: 5%;
-				left: 65%;
-				z-index: 5;
-				font-size: 12px;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-			}
-
-			#football{
-				position: absolute;
-				top: 50%;
-				left: 55%;
-				width: 10%;
-				z-index: 8;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-			}
-			#footbox{
-				position: absolute;
-				top: 55%;
-				left: 40%;
-				z-index: 5;
-				width: 24%;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
-
-			}
-			#foottext{
-				position: absolute;
-				top: 55%;
-				left: 42%;
-				z-index: 5;
-				font-size: 12px;
-				animation: poptop ease-in-out 2s;
-			  	animation-iteration-count: 1;
-			  	transform-origin: 50% 50%;
 			}
 
 			@keyframes poptop{
@@ -707,16 +540,7 @@
 						$('#top_button').hide();
 					}
 					if (index==4 && direction=='up') {
-						if (flag_footer==1) {
-							flag_footer=0;
-							$('#bottom_button').css('bottom','1%');
-							$('#bottom_button').css('transform','rotate(0deg)');
-							$('.footer').css('bottom','-12%');
-							x=1;
-						}
-						else{
-
-						}
+						
 					}
 
 
@@ -725,12 +549,10 @@
 				},
 				afterLoad: function(anchor, index){
 					if (index==4) {
-						$('#icon_holder_bottom').html("expand_less");
 						$('#medal').css('animation','fadeDown ease-in-out 0.5s');
 						$('#medal').css('animation-iteration-count','1');
 					}
 					else{
-						$('#icon_holder_bottom').html("expand_more");
 						$('#medal').css('animation','');
 						$('#medal').css('animation-iteration-count','');
 					}
@@ -753,10 +575,6 @@
 			$('#fp-nav').css('height','19px');
 			var x=1;
 			$('#bottom_button').click(function() {
-				if (document.getElementById('icon_holder_bottom').innerHTML=='expand_more') {
-					$.fn.fullpage.moveSectionDown();
-				}
-				else{
 					if (x==1) {
 						flag_footer=1;
 						$(this).css('bottom','9%');
@@ -772,12 +590,10 @@
 						$('.footer').css('bottom','-12%');
 						x=1;
 					}
-					
-				}
 			});
 
 			$('#top_button').click(function() {
-				$.fn.fullpage.moveSectionUp();
+				$.fn.fullpage.moveTo(1);
 			});
 
         });
@@ -828,37 +644,15 @@
             <div class="section" id="section2">
 				<div class="right">
 					<div class="images">
-						<div class="road">
-							<img src="images/PickUp_Road.png" alt="">
-						</div>
-						<div class="clouds">
-							<img src="images/PickUp_Cloud.png" alt="" id="c1">
-							<img src="images/PickUp_CloudInverted.png" alt="" id="c2">
-							<img src="images/PickUp_DoubleCloud.png" alt="" id="c3">
-							<img src="images/PickUp_Cloud.png" alt="" id="c4">
-						</div>
-						<div class="cycle">
-							<img src="images/PickUp_Cycle.png" alt="" id="cycler">
-							<img src="images/PickUp_Pin2.png" alt="" id="pin_cycler">
-							<img src="images/PickUp_Pin2Textbox.png" alt="" id="text_cycler_box">
-							<p id="text_cycler">Cycling</p>
-						</div>
-						<div class="yoga">
-							<img src="images/PickUp_Pin4.png" alt="" id="yoga">
-							<img src="images/PickUp_Pin4Textbox.png" alt="" id="yogabox">
-							<p id="yogatext">Yoga Class</p>
-						</div>
-						<div class="zumba">
-							<img src="images/PickUp_Pin3.png" alt="" id="zumba">
-							<img src="images/PickUp_Pin3Textbox.png" alt="" id="zumbabox">
-							<p id="zumbatext">Zumba Workshop</p>
-						</div>
-
-						<div class="football">
-							<img src="images/PickUp_Pin1.png" alt="" id="football">
-							<img src="images/PickUp_Pin1Textbox.png" alt="" id="footbox">
-							<p id="foottext">Football Game</p>
-						</div>
+						<img src="images/PickUp_Cloud.png" alt="" style="z-index:4;" class="cloud">
+						<img src="images/PickUp_CloudInverted.png" alt="" style="z-index:4;" class="cloud">
+						<img src="images/PickUp_Cycle.png" alt="" style="z-index:5;" class="cycle">
+						<img src="images/PickUp_DoubleCloud.png" alt="" style="z-index:4;" class="cloud">
+						<img src="images/PickUp_Pin1.png" alt="" style="z-index:4;" class="pins">
+						<img src="images/PickUp_Pin2.png" alt="" style="z-index:4;" class="pins">
+						<img src="images/PickUp_Pin3.png" alt="" style="z-index:4;" class="pins">
+						<img src="images/PickUp_Pin4.png" alt="" style="z-index:4;" class="pins">
+						<img src="images/PickUp_Road.png" alt="" style="z-index:3;" >
 					</div>
 					<div class="text_block">
 						<h1>
@@ -912,10 +706,10 @@
 		<div class="outer_layer">
 
 			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="top_button">
-					<i class="material-icons" id="icon_holder_top">expand_less</i>
+					<i class="material-icons" id="icon_holder_top">expand_more</i>
 			</button>
 			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="bottom_button">
-					<i class="material-icons" id="icon_holder_bottom">expand_more</i>
+					<i class="material-icons" id="icon_holder_bottom">expand_less</i>
 			</button>
 			<div class="footer" >
 	        	<footer class="mdl-mini-footer" >
