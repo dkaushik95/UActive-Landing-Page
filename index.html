@@ -496,27 +496,14 @@
 			}
 			/* Moving icons*/
 			.icons_left{
-			  animation: moveIt ease-in-out 10s;
+			  animation: moveIt linear 10s;
 			  animation-iteration-count: infinite;
 			  transform-origin: 100% 100%;
 			}
 			
 			@keyframes moveIt{
-			  0% {
-				transform:  translate(-49px,-1px)  ;
-			  }
-			  29% {
-				transform:  translate(-49px,-50px)  ;
-			  }
-			  56% {
-				transform:  translate(0px,-48px)  ;
-			  }
-			  79% {
-				transform:  translate(2px,1px)  ;
-			  }
-			  100% {
-				transform:  translate(-49px,0px)  ;
-			  }
+			  from { transform: rotate(0deg) translateX(20px) translateY(20px) rotate(0deg); }
+    			to   { transform: rotate(360deg) translateX(20px) translateY(20px) rotate(-360deg); }
 			}
 
 			.outer_layer{
@@ -578,19 +565,13 @@
 				  if(index == 1 || direction =='down'){
 						vid.pause();
 						$('#top_button').show();
+						
 					}
 					else if(index == 2 && direction == 'up'){
 						vid.play();
 						$('.icons_left').hide();
 						$('#top_button').hide();
 					}
-					if (index==4 && direction=='up') {
-						
-					}
-
-
-
-
 				},
 				afterLoad: function(anchor, index){
 					if (index==4) {
