@@ -61,11 +61,11 @@
 
 			/* COMMON*/
 			.text_block h1{
-				padding: 20px;
 				text-align: center;
 				color: white;
 				font-family: 'medium';
 				font-size: 80px;
+				padding-bottom: 0px;
 			}
 			.text_block p{
 				padding: 20px;
@@ -126,19 +126,18 @@
 			}
 
 			.text h1{
-				padding: 20px;
 				text-align: center;
 				color: white;
 				font-family: 'medium';
-				font-size: 80px;
+				font-size: 60px;
 			}
 			.text p{
-				padding: 20px;
 				text-align: center;
 				color: white;
 				font-family: 'medium';
-				font-size: 30px;
+				font-size: auto;
 				line-height: 30px;
+				padding-bottom: 40px;
 			}
 
 			.icons{
@@ -205,6 +204,7 @@
 	    		width: 100%;
 	    		height: 50%;
 	    		position: relative;
+	    		font-size: 10px;
 	    	}
 			
 
@@ -219,12 +219,18 @@
 	    		position: absolute;
 	    		bottom: 0;
 	    		left: 0;
-	    		width: 100%;
+	    		width: 90%;
+	    		margin-top: 20px;
 	    	}
 	    	.pins{
 			  	animation: poptop ease-in-out 5s;
 			  	animation-iteration-count: infinite;
 			}
+			.pinss{
+			  	animation: animationFrames ease-in-out 10s;
+			  	animation-iteration-count: infinite;
+			}
+
 			.cloud{
 				animation: fadeout ease-in-out 5s;
 			  	animation-iteration-count: infinite;
@@ -239,13 +245,13 @@
 			  0% {
 			    transform:  translate(0px,0px)  scaleX(1.00) ;
 			  }
-			  44% {
+			  49% {
 			    transform:  translate(488px,0px)  scaleX(1.00) ;
 			  }
-			  47% {
+			  50% {
 			    transform:  translate(488px,0px)  scaleX(-1.00) ;
 			  }
-			  97% {
+			  99% {
 			    transform:  translate(20px,0px)  scaleX(-1.00) ;
 			  }
 			  100% {
@@ -315,20 +321,59 @@
 	    		height: 50%;
 
 	    	}
+	    	#section3 .image_block img{
+	    		position: absolute;
+	    		top: 0;
+	    		left: 0;
+	    		width: 100%;
+	    		margin-top: 20px;
+	    	}
 	    	#section3 .text_block{
 	    		width: 100%;
 	    		height: 50%;
 	    		position: relative;
 	    	}
-			#section3 #heads{
-				width: 100%;
-				padding: 40px;
-			}
+			
 
 			#section3 .text_block p{
 				padding: 20px;
 				color: white;
 			}
+
+
+			#head_top{
+			  animation: bottomanimation linear 4s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 0% 0%;
+			}
+			#head_bottom{
+			  animation: topanimation linear 6s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 0% 0%;
+			}
+			#head_left{
+			  animation: bottomanimation linear 8s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 0% 0%;
+			}
+			#head_right{
+			  animation: topanimation linear 10s;
+			  animation-iteration-count: infinite;
+			  transform-origin: 0% 0%;
+			}
+
+			@keyframes topanimation {
+    			from { transform: rotate(0deg) translateX(20px) translateY(20px) rotate(0deg); }
+    			to   { transform: rotate(360deg) translateX(20px) translateY(20px) rotate(-360deg); }
+			}
+
+			@keyframes bottomanimation {
+    			from { transform: rotate(0deg) translateX(20px) translateY(20px) rotate(0deg); }
+    			to   { transform: rotate(-360deg) translateX(20px) translateY(20px) rotate(360deg); }
+			}
+
+
+
 
 
 			/*
@@ -649,13 +694,16 @@
 						<img src="images/PickUp_Cycle.png" alt="" style="z-index:5;" class="cycle">
 						<img src="images/PickUp_DoubleCloud.png" alt="" style="z-index:4;" class="cloud">
 						<img src="images/PickUp_Pin1.png" alt="" style="z-index:4;" class="pins">
-						<img src="images/PickUp_Pin2.png" alt="" style="z-index:4;" class="pins">
+						<img src="images/PickUp_Pin2.png" alt="" style="z-index:4;" class="pinss">
 						<img src="images/PickUp_Pin3.png" alt="" style="z-index:4;" class="pins">
 						<img src="images/PickUp_Pin4.png" alt="" style="z-index:4;" class="pins">
 						<img src="images/PickUp_Road.png" alt="" style="z-index:3;" >
 					</div>
 					<div class="text_block">
-						<h1>
+						<h1 style="
+    margin-bottom: 0px;
+    margin-top: 0px;
+">
 							Pick Up!
 						</h1>
 						<p>
@@ -670,7 +718,11 @@
             <div class="section" id="section3">
 				<div class="right">
 					<div class="image_block">
-						<img src="images/heads.png" alt="" id="heads">
+						<img src="images/head1.png" alt="" id="head_center">
+						<img src="images/head2.png" alt="" id="head_right">
+						<img src="images/head3.png" alt="" id="head_left">
+						<img src="images/head4.png" alt="" id="head_top">
+						<img src="images/head5.png" alt="" id="head_bottom">
 					</div>
 					<div class="text_block">
 						<h1>
