@@ -5,7 +5,15 @@ $(document).ready(function(e) {
 		sectionsColor:['#000','#39445e', '#39445e', '#39445e'],
 		navigation: true,
 		navigationPosition: 'right',
-		scrollBar: true,
+		scrollBar: false,
+		css3:true,
+		fitToSection:false,
+		scrollOverflow: false,
+		scrollingSpeed:1000,
+		slidesNavigation: false,
+		afterResize: function(){
+			$.fn.fullpage.reBuild();
+		},
 		afterRender: function(){
 			$('video').get(0).play();
 			$('top_button').hide();
@@ -34,13 +42,16 @@ $(document).ready(function(e) {
 			}
 
 			if (index==1) {
+				$('#section1').css('visibility', 'visible');
 				$('.icons_left').hide();
 				$('#top_button').hide();
 			}
 			else if(index==2){
+				$('#section1').css('visibility', 'hidden');
 				$('.icons_left').fadeIn(500);
 				$('.pins').css('animation','poptop ease-in-out 3s');
 				$('.pins').css('animation-iteration-count','1');
+				
 
 			}
 			else{
@@ -76,5 +87,12 @@ $(document).ready(function(e) {
 	$('#top_button').click(function() {
 		$.fn.fullpage.moveTo(1);
 	});
-
+	
+	$('.slider').sss({
+		slideShow : true, // Set to false to prevent SSS from automatically animating.
+		startOn : 0, // Slide to display first. Uses array notation (0 = first slide).
+		transition : 400, // Length (in milliseconds) of the fade transition.
+		speed : 3500, // Slideshow speed in milliseconds.
+		showNav : false // Set to false to hide navigation arrows.
 	});
+});
