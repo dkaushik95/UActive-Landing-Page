@@ -9,59 +9,68 @@ $(document).ready(function(e) {
 		css3:true,
 		fitToSection:false,
 		scrollOverflow: false,
-		scrollingSpeed:1000,
+		scrollingSpeed:3000,
 		slidesNavigation: false,
-		afterResize: function(){
-			$.fn.fullpage.reBuild();
-		},
+		autoScrolling:true,
 		afterRender: function(){
 			$('video').get(0).play();
-			$('top_button').hide();
 		},
 		onLeave: function(index, nextIndex, direction){
 		  var vid = document.getElementById("myVideo");
 		  if(index == 1 || direction =='down'){
 				vid.pause();
-				$('#top_button').show();
-				
+				$('.icons_left').fadeIn();	
 			}
 			else if(index == 2 && direction == 'up'){
 				vid.play();
 				$('.icons_left').hide();
-				$('#top_button').hide();
 			}
 		},
 		afterLoad: function(anchor, index){
-			if (index==4) {
-				$('#medal').css('animation','fadeDown ease-in-out 0.5s');
-				$('#medal').css('animation-iteration-count','1');
+			if(index!=1){
+				$('.icons_left').show();
+				$('#section1').css('visibility','hidden');
+				$('#sld_1').attr('src','images/VideoPage/1.PNG');
+				$('#sld_2').attr('src','images/VideoPage/2.PNG');
+				$('#sld_3').attr('src','images/VideoPage/3.PNG');
+				$('#sld_4').attr('src','images/VideoPage/4.PNG');
 			}
 			else{
-				$('#medal').css('animation','');
-				$('#medal').css('animation-iteration-count','');
-			}
-
-			if (index==1) {
-				$('#section1').css('visibility', 'visible');
 				$('.icons_left').hide();
-				$('#top_button').hide();
+				$('#section1').css('visibility','visible');
 			}
-			else if(index==2){
-				$('#section1').css('visibility', 'hidden');
+			if(index==2){
 				$('.icons_left').fadeIn(500);
 				$('.pins').css('animation','poptop ease-in-out 3s');
 				$('.pins').css('animation-iteration-count','1');
-				
-
+				$('#sld_1').attr('src','images/PickUpPage/1.png');
+				$('#sld_2').attr('src','images/PickUpPage/2.png');
+				$('#sld_3').attr('src','images/PickUpPage/3.png');
+				$('#sld_4').attr('src','images/PickUpPage/4.png');
+			}
+			else if(index==3){
+				$('#sld_1').attr('src','images/BuddyUpPage/1.png');
+				$('#sld_2').attr('src','images/BuddyUpPage/2.png');
+				$('#sld_3').attr('src','images/BuddyUpPage/3.png');
+				$('#sld_4').attr('src','');
+			}
+			else if (index==4) {
+				$('#medal').css('animation','fadeDown ease-in-out 0.5s');
+				$('#medal').css('animation-iteration-count','1');
+				$('#sld_1').attr('src','images/RewardsPage/1.png');
+				$('#sld_2').attr('src','');
+				$('#sld_3').attr('src','');
+				$('#sld_4').attr('src','');
 			}
 			else{
-				$('.icons_left').show();
 				$('.pins').css('animation','');
 				$('.pins').css('animation-iteration-count','');
+				$('#medal').css('animation','');
+				$('#medal').css('animation-iteration-count','');
 			}
 		}
-		
 	});
+
 	$('#fp-nav').css('margin-top','0px');
 	$('#fp-nav').css('width','19px');
 	$('#fp-nav').css('height','19px');
@@ -72,7 +81,6 @@ $(document).ready(function(e) {
 				$(this).css('bottom','9%');
 				$(this).css('transform','rotate(180deg)');
 				$('.footer').css('bottom','-1%');
-
 				x=2;
 			}
 			else{
@@ -83,11 +91,6 @@ $(document).ready(function(e) {
 				x=1;
 			}
 	});
-
-	$('#top_button').click(function() {
-		$.fn.fullpage.moveTo(1);
-	});
-	
 	$('.slider').sss({
 		slideShow : true, // Set to false to prevent SSS from automatically animating.
 		startOn : 0, // Slide to display first. Uses array notation (0 = first slide).
