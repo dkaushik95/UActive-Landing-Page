@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Chrome, Firefox OS, Opera and Vivaldi -->
+	<meta name="theme-color" content="#39445e">
+<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#39445e">
+<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#39445e">
+	<title>UActive</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<style>    
+        @font-face {
+            font-family: "medium";
+            src: url('fonts/Brandon_med.otf');
+        }
+        *{
+        	padding: 0;
+        	margin: 0;
+        	color: white;
+        	font-family: "medium";
+        }
+        .section img{
+        	position: absolute;
+        	bottom: 0;
+        	width: 100%;
+        }
+        #section1{
+        	text-align: center;
+        }
+        #logo{
+        	position: absolute;
+        	top: 10%;
+        	left:10%;
+        	width: 80%;
+        }
+        #apple{
+        	width: 40%;
+        	left: 10%;
+        	top: 60%;
+        }
+        #google{
+        	width: 40%;
+        	right: 10%;
+        	top: 60%;
+        }
+        #facebook{
+        	width: 20%;
+        	left: 10%;
+        	top: 80%;
+        }
+        #instagram{
+        	width: 20%;
+        	left: 40%;
+        	top: 80%;
+        }
+        #twitter{
+        	width: 20%;
+        	right: 10%;
+        	top: 80%;
+        }
+       	h1{
+       		font-size: 300%;
+       		position: absolute;
+       		top: 30%;
+       		width: 100%;
+       		margin-bottom: 10px;
+       	}
+       	p{
+       		font-size: 100%;
+       		position: absolute;
+       		top: 50%;
+       		width: 100%;
+       	}
+
+       	@keyframes moveIt{
+  			from { transform: rotate(0deg) translate(5px,0px) translate(0px,5px) rotate(0deg); }
+			to   { transform: rotate(360deg) translate(5px,0px) translate(0px,5px) rotate(-360deg); }
+		}
+    </style>
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('#fullpage').fullpage({
+		        navigation: true,
+		        navigationPosition: 'right',
+		        //Scrolling
+		        css3: true,
+		        scrollingSpeed: 500,
+		        fitToSection: true,
+		        fitToSectionDelay: 1000,
+		        scrollBar: false,
+		        easing: 'easeInOutCubic',
+		        easingcss3: 'ease',
+		        loopBottom: false,
+		        loopTop: false,
+		        loopHorizontal: true,
+		        continuousVertical: false,
+		        scrollOverflow: true,
+		        scrollOverflowOptions: null,
+		        touchSensitivity: 15,
+		        normalScrollElementTouchThreshold: 5,
+		        //Accessibility
+		        keyboardScrolling: true,
+		        animateAnchor: true,
+
+		        //Design
+		        verticalCentered: true,
+		        sectionsColor : ['#39445e', '#9b70b0','#2dc3ea','#4fbc8a','#f37372','#ff9c00','#55c3bb'],
+		        responsiveWidth: 0,
+		        responsiveHeight: 0,
+		        //Custom selectors
+		        //events
+		        onLeave: function(index, nextIndex, direction){},
+		        afterLoad: function(anchorLink, index){},
+		        afterRender: function(){},
+		        afterResize: function(){},
+		        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+		        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+		    });
+		});
+
+		screen.orientation.lock('landscape');
+	</script>
+</head>
+<body>
+	<div id="fullpage">
+		<div class="section" id="section1">
+			<img src="images/mobile/main.png" alt="" style="z-index:0; width:100%; position:absolute; bottom:0; left:0; animation:moveIt ease 10s;
+			animation-iteration-count:infinite;">
+			<img src="images/logo.png" alt="" id="logo">
+			<h1>
+				Sample Text Comes Here
+			</h1>
+			<p>Your go to social network for Sports and Fitness</p>
+			<a href=""><img src="images/apple_badge.png" alt="" id="apple"></a>
+			<img src="images/google_badge.png" alt="" id="google">
+			<img src="images/facebook.png" alt="" id="facebook">
+			<img src="images/instagram.png" alt="" id="instagram">
+			<img src="images/twitter.png" alt="" id="twitter">
+		</div>
+		<div class="section" id="section2">
+			<img src="images/mobile/Iphone6_1.png" alt="">
+		</div>
+		<div class="section" id="section3">
+			<img src="images/mobile/Iphone6_2.png" alt="">
+		</div>
+		<div class="section" id="section4">
+			<img src="images/mobile/Iphone6_3.png" alt="">
+		</div>
+		<div class="section" id="section5">
+			<img src="images/mobile/Iphone6_4.png" alt="">
+		</div>
+		<div class="section" id="section6">
+			<img src="images/mobile/Iphone6_5.png" alt="">
+		</div>
+		<div class="section" id="section7">
+			<img src="images/mobile/Iphone6_6.png" alt="">
+		</div>
+
+	</div>
+</body>
+</html>
