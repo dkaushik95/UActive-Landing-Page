@@ -1,3 +1,6 @@
+if (screen.width <= 800) {
+    window.location = "mobile.html";
+}
 $(document).ready(function(s) {
     var t = 0;
     $("#fullpage").fullpage({
@@ -43,7 +46,7 @@ $(document).ready(function(s) {
     }), $("#fp-nav").css("margin-top", "0px"), $("#fp-nav").css("width", "19px"), $("#fp-nav").css("height", "19px");
     var a = 1;
     $("#bottom_button").click(function() {
-        1 == a ? (t = 1, $(this).css("bottom", "9%"), $(this).css("transform", "rotate(180deg)"), $(".footer").css("bottom", "-1%"), a = 2) : (t = 0, $(this).css("bottom", "1%"), $(this).css("transform", "rotate(0deg)"), $(".footer").css("bottom", "-12%"), a = 1)
+        1 == a ? (t = 1, $(this).css("bottom", "11%"), $(this).css("transform", "rotate(180deg)"), $(".footer").css("bottom", "-1%"), a = 2) : (t = 0, $(this).css("bottom", "1%"), $(this).css("transform", "rotate(0deg)"), $(".footer").css("bottom", "-12%"), a = 1)
     }), $(".slider").sss({
         slideShow: !0,
         startOn: 0,
