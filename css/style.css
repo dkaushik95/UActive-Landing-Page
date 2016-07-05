@@ -176,18 +176,16 @@
 	width: 90%;
 	margin-top: 20px;
 }
+/*section2*/
 .pinss{
-  	animation: animationFrames ease-in-out 14s;
-  	animation-iteration-count: infinite;
+
 }
 
 .cloud{
-	animation: fadeout ease-in-out 5s;
-  	animation-iteration-count: infinite;
+
 }
 .cycle{
-  animation: moveandcomeback ease-in-out 14s;
-  animation-iteration-count: infinite;
+
   transform-origin: 2% 2%;
 }
 #section3 .right{
@@ -212,25 +210,18 @@
 	height: 50%;
 	position: relative;
 }
-
+/*section3*/
 #head_top{
-  animation: bottomanimation linear 4s;
-  animation-iteration-count: infinite;
   transform-origin: 0% 0%;
 }
 #head_bottom{
-  animation: topanimation linear 6s;
-  animation-iteration-count: infinite;
   transform-origin: 0% 0%;
 }
 #head_left{
-  animation: bottomanimation linear 8s;
-  animation-iteration-count: infinite;
   transform-origin: 0% 0%;
 }
 #head_right{
-  animation: topanimation linear 10s;
-  animation-iteration-count: infinite;
+ 
   transform-origin: 0% 0%;
 }
 #section4 .right{
@@ -256,11 +247,9 @@
 	left: 0;
 	width: 100%;
 }
+/*section4*/
 #section4 .image_block img:nth-child(n+2){
-	animation: tada ease-in-out 2s;
-	animation-iteration-count: infinite;
 	transform-origin: 50% 85%;
-	  
 }
 
 .icons_left {

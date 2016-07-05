@@ -1,0 +1,5 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    <Dishant Kaushik> -- <Web Developer> -- <@dkaushik95>
