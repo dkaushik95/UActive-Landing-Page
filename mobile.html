@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="uactiv.appcache">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,52 +85,7 @@
       	}
     </style>
 	<link rel="stylesheet" href="css/material.css">
-    <script defer src="js/material.js"></script>
-    <script src="js/jquery-1.11.2.min.js"></script>
-	<script src="js/jquery.fullPage.js"></script>
-	<script>
-		$(document).ready(function() {
-		    $('#fullpage').fullpage({
-		        navigation: true,
-		        navigationPosition: 'right',
-		        //Scrolling
-		        css3: true,
-		        scrollingSpeed: 500,
-		        fitToSection: true,
-		        fitToSectionDelay: 1000,
-		        scrollBar: false,
-		        easing: 'easeInOutCubic',
-		        easingcss3: 'ease',
-		        loopBottom: false,
-		        loopTop: false,
-		        loopHorizontal: true,
-		        continuousVertical: false,
-		        scrollOverflow: true,
-		        scrollOverflowOptions: null,
-		        touchSensitivity: 15,
-		        normalScrollElementTouchThreshold: 5,
-		        //Accessibility
-		        keyboardScrolling: true,
-		        animateAnchor: true,
-
-		        //Design
-		        verticalCentered: true,
-		        sectionsColor : ['#39445e', '#9b70b0','#2dc3ea','#4fbc8a','#f37372','#ff9c00','#55c3bb'],
-		        responsiveWidth: 0,
-		        responsiveHeight: 0,
-		        //Custom selectors
-		        //events
-		        onLeave: function(index, nextIndex, direction){},
-		        afterLoad: function(anchorLink, index){},
-		        afterRender: function(){},
-		        afterResize: function(){},
-		        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-		        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-		    });
-		});
-
-		screen.orientation.lock('landscape');
-	</script>
+    
 </head>
 <body>
 
@@ -185,5 +140,51 @@
         </div>
     </div>
 	</div>
+	<script defer src="js/material.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('#fullpage').fullpage({
+		        navigation: true,
+		        navigationPosition: 'right',
+		        //Scrolling
+		        css3: true,
+		        scrollingSpeed: 500,
+		        fitToSection: true,
+		        fitToSectionDelay: 1000,
+		        scrollBar: false,
+		        easing: 'easeInOutCubic',
+		        easingcss3: 'ease',
+		        loopBottom: false,
+		        loopTop: false,
+		        loopHorizontal: true,
+		        continuousVertical: false,
+		        scrollOverflow: true,
+		        scrollOverflowOptions: null,
+		        touchSensitivity: 15,
+		        normalScrollElementTouchThreshold: 5,
+		        //Accessibility
+		        keyboardScrolling: true,
+		        animateAnchor: true,
+
+		        //Design
+		        verticalCentered: true,
+		        sectionsColor : ['#39445e', '#9b70b0','#2dc3ea','#4fbc8a','#f37372','#ff9c00','#55c3bb'],
+		        responsiveWidth: 0,
+		        responsiveHeight: 0,
+		        //Custom selectors
+		        //events
+		        onLeave: function(index, nextIndex, direction){},
+		        afterLoad: function(anchorLink, index){},
+		        afterRender: function(){},
+		        afterResize: function(){},
+		        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+		        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+		    });
+		});
+
+		screen.orientation.lock('landscape');
+	</script>
 </body>
 </html>
